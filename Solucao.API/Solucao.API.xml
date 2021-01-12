@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Solucao.API</name>
+    </assembly>
+    <members>
+        <member name="M:Solucao.API.Controllers.ClienteController.GetAll">
+            <summary>
+            Retorna todos os clientes cadastrados. Atenção, pode causar lentidão.
+            </summary>  
+            <response code="200">Retorna todos os clientes cadastrados</response>
+        </member>
+        <member name="M:Solucao.API.Controllers.ClienteController.GetById(System.Int32)">
+            <summary>
+            Retorna o cliente referente ao ID informado.
+            </summary>  
+            <param name="id"></param>
+            <response code="200">Cliente encontrado</response>
+            <response code="404">Cliente não encontrado</response>
+        </member>
+        <member name="M:Solucao.API.Controllers.ClienteController.Create(Solucao.Domain.Models.Cliente)">
+            <summary>
+            Cria um cliente novo.
+            </summary>  
+            <response code="201">Cliente cadastrado</response>
+        </member>
+    </members>
+</doc>

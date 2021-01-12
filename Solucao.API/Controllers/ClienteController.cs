@@ -18,19 +18,34 @@ namespace Solucao.API.Controllers
             _service = service;
         }
 
-        [HttpGet]
+        /// <summary>
+        /// Retorna todos os clientes cadastrados. Atenção, pode causar lentidão.
+        /// </summary>  
+        /// <response code="200">Retorna todos os clientes cadastrados</response>
+        [HttpGet] 
         public ICollection<Cliente> GetAll()
         {
             return this._service.GetAll();
         }
 
+        /// <summary>
+        /// Retorna o cliente referente ao ID informado.
+        /// </summary>  
+        /// <param name="id"></param>
+        /// <response code="200">Cliente encontrado</response>
+        /// <response code="404">Cliente não encontrado</response>
         [HttpGet("{id}")]
         public Cliente GetById(int id)
         {
             return this._service.GetById(id);
         }
 
+        /// <summary>
+        /// Cria um cliente novo.
+        /// </summary>  
+        /// <response code="201">Cliente cadastrado</response>
         [HttpPost]
+        [ProducesResponseType(201)]
         public Cliente Create([FromBody] Cliente cliente)
         {
             return this._service.Create(cliente);

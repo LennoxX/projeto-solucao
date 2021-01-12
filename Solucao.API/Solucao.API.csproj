@@ -4,6 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.API\Solucao.API.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591;1571;1572;1573;1587;1570</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Solucao.Domain\Solucao.Domain.csproj" />
     <ProjectReference Include="..\Solucao.Repositories\Solucao.Repositories.csproj" />
