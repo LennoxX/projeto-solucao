@@ -1,0 +1,138 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Solucao.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Solucao.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Solucao.Domain.dll": {}
+        }
+      },
+      "Solucao.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Solucao.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Solucao.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Solucao.Repositories.dll": {}
+        }
+      },
+      "Solucao.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Solucao.Domain": "1.0.0",
+          "Solucao.Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Solucao.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Solucao.Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Solucao.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Solucao.Domain/Solucao.Domain.csproj",
+      "msbuildProject": "../Solucao.Domain/Solucao.Domain.csproj"
+    },
+    "Solucao.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Solucao.Repositories/Solucao.Repositories.csproj",
+      "msbuildProject": "../Solucao.Repositories/Solucao.Repositories.csproj"
+    },
+    "Solucao.Services/1.0.0": {
+      "type": "project",
+      "path": "../Solucao.Services/Solucao.Services.csproj",
+      "msbuildProject": "../Solucao.Services/Solucao.Services.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Solucao.Domain >= 1.0.0",
+      "Solucao.Repositories >= 1.0.0",
+      "Solucao.Services >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Lucas\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.API\\Solucao.API.csproj",
+      "projectName": "Solucao.API",
+      "projectPath": "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.API\\Solucao.API.csproj",
+      "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.API\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {
+            "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.Domain\\Solucao.Domain.csproj": {
+              "projectPath": "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.Domain\\Solucao.Domain.csproj"
+            },
+            "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.Repositories\\Solucao.Repositories.csproj": {
+              "projectPath": "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.Repositories\\Solucao.Repositories.csproj"
+            },
+            "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.Services\\Solucao.Services.csproj": {
+              "projectPath": "C:\\Users\\Lucas\\Documents\\Projetos Off\\Solucao\\Solucao.Services\\Solucao.Services.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

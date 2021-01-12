@@ -1,0 +1,9 @@
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\bin\Debug\netstandard2.0\Solucao.Domain.deps.json
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\bin\Debug\netstandard2.0\Solucao.Domain.dll
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\bin\Debug\netstandard2.0\Solucao.Domain.pdb
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\obj\Debug\netstandard2.0\Solucao.Domain.AssemblyInfoInputs.cache
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\obj\Debug\netstandard2.0\Solucao.Domain.AssemblyInfo.cs
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\obj\Debug\netstandard2.0\Solucao.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\obj\Debug\netstandard2.0\Solucao.Domain.dll
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\obj\Debug\netstandard2.0\Solucao.Domain.pdb
+C:\Users\Lucas\Documents\Projetos Off\Solucao\Solucao.Domain\obj\Debug\netstandard2.0\Solucao.Domain.csprojAssemblyReference.cache
