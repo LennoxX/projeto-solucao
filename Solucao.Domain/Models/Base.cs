@@ -1,7 +1,10 @@
-﻿namespace Solucao.Domain.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Solucao.Domain.Models
 {
     public class Base
     {
-        public int? Id { get; set; }
+        [Key]
+        public int Id { get; set; }
     }
 }

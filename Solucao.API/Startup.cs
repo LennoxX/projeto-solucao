@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using MySqlConnector;
+using Solucao.API.Context;
 using Solucao.Repositories.Interfaces;
 using Solucao.Repositories.Repositories;
 using Solucao.Services.Interfaces;
@@ -52,9 +55,14 @@ namespace Solucao.API
                 c.IncludeXmlComments(xmlPath);
             });
 
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddMvc();
+
             services.AddHttpClient();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
