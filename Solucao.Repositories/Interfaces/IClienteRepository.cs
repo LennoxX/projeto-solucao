@@ -5,16 +5,8 @@ using System.Text;
 
 namespace Solucao.Repositories.Interfaces
 {
-    public interface IClienteRepository
+    public interface IClienteRepository : IRepository<Cliente>
     {
-        Cliente Create(Cliente cliente);
-
-        Cliente Update(Cliente cliente);
-
-        ICollection<Cliente> GetAll();
-
-        Cliente GetById(int id);
-
-        void Delete(int id);
+       
     }
 }

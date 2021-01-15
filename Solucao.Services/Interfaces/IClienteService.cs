@@ -1,4 +1,5 @@
 ﻿using Solucao.Domain.Models;
+using Solucao.Domain.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +8,7 @@ namespace Solucao.Services.Interfaces
 {
     public interface IClienteService
     {
-        ICollection<Cliente> GetAll();
+        Response<IEnumerable<Cliente>> GetAll();
 
         Cliente Create(Cliente c);
 

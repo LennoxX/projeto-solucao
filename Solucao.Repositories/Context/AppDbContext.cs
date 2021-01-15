@@ -3,7 +3,7 @@ using Solucao.Domain.Models;
 using System;
 using System.Linq;
 
-namespace Solucao.API.Context
+namespace Solucao.Repositories.Context
 {
     public class AppDbContext : DbContext
     {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MySqlConnector;
-using Solucao.API.Context;
+using Solucao.Repositories.Context;
 using Solucao.Repositories.Interfaces;
 using Solucao.Repositories.Repositories;
 using Solucao.Services.Interfaces;

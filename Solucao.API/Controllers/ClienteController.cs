@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Solucao.Domain.Models;
+using Solucao.Domain.Response;
 using Solucao.Services.Interfaces;
 using Solucao.Services.Services;
 using System;
@@ -22,10 +24,10 @@ namespace Solucao.API.Controllers
         /// Retorna todos os clientes cadastrados. Atenção, pode causar lentidão.
         /// </summary>  
         /// <response code="200">Retorna todos os clientes cadastrados</response>
-        [HttpGet] 
-        public ICollection<Cliente> GetAll()
+        [HttpGet]
+        public ActionResult<IEnumerable<Cliente>> GetAll()
         {
-            return this._service.GetAll();
+            return Ok(_service.GetAll());
         }
 
         /// <summary>
@@ -46,21 +48,52 @@ namespace Solucao.API.Controllers
         /// <response code="201">Cliente cadastrado</response>
         [HttpPost]
         [ProducesResponseType(201)]
-        public Cliente Create([FromBody] Cliente cliente)
+        public ActionResult<Response<Cliente>> Create([FromBody] Cliente cliente)
         {
-            return this._service.Create(cliente);
+            try
+            {
+                this._service.Create(cliente);
+                Response<Cliente> response = new Response<Cliente>();
+                response.Data = cliente;
+                return CreatedAtAction(nameof(GetById), new { id = cliente.Id }, response);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+            }
+
         }
 
         [HttpPut]
-        public Cliente Update([FromBody] Cliente cliente)
+        public ActionResult<Response<Cliente>> Update([FromBody] Cliente cliente)
         {
-            return this._service.Update(cliente);
+            try
+            {
+                this._service.Update(cliente);
+                Response<Cliente> response = new Response<Cliente>();
+                response.Data = cliente;
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+            }
+
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<Response<Cliente>> Delete(int id)
         {
-            this._service.Delete(id);
+            try
+            {
+                this._service.Delete(id);
+                return Ok("Cliente excluído com sucesso");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+            }
+
         }
     }
 }
