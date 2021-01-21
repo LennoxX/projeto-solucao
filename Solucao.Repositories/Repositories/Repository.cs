@@ -3,10 +3,8 @@ using Solucao.Domain.Response;
 using Solucao.Repositories.Context;
 using Solucao.Repositories.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace Solucao.Repositories.Repositories
 {
@@ -35,12 +33,27 @@ namespace Solucao.Repositories.Repositories
 
         public IQueryable<T> GetAll()
         {
-            return _context.Set<T>().AsNoTracking(); ;
+            return _context.Set<T>().AsNoTracking();
         }
 
         public T GetById(Expression<Func<T, bool>> predicate)
         {
             return _context.Set<T>().SingleOrDefault(predicate);
+        }
+
+        public Page<T> GetPaged(int pageNumber, int pageSize)
+        {
+           
+
+            IQueryable<T> tmpList = GetAll();
+            Page<T> Pageable = new Page<T>();
+            Pageable.Content = tmpList.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+            Pageable.Size = Pageable.Content.Count();
+            Pageable.TotalElements = tmpList.Count();
+            Pageable.PageIndex = pageNumber;
+            Pageable.TotalPages =(int)Math.Ceiling(decimal.Divide(Pageable.TotalElements, pageSize));
+
+            return Pageable;
         }
 
         public T Update(T entity)

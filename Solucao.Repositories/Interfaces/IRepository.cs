@@ -11,6 +11,8 @@ namespace Solucao.Repositories.Interfaces
     {
         IQueryable<T> GetAll();
 
+        Page<T> GetPaged(int page, int size);
+
         T GetById(Expression<Func<T, bool>> predicate);
 
         T Add(T entity);

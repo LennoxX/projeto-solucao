@@ -10,6 +10,14 @@
             </summary>  
             <response code="200">Retorna todos os clientes cadastrados</response>
         </member>
+        <member name="M:Solucao.API.Controllers.ClienteController.GetPaginado(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Retorna os clientes cadastrados de forma paginada
+            </summary>  
+            <param name="pageNumber">Número da página para consulta</param>
+            <param name="pageSize">Número de elementos por página (Máx.: 10)</param>
+            <response code="200">Retorna os clientes cadastrados</response>
+        </member>
         <member name="M:Solucao.API.Controllers.ClienteController.GetById(System.Int32)">
             <summary>
             Retorna o cliente referente ao ID informado.
@@ -23,6 +31,18 @@
             Cria um cliente novo.
             </summary>  
             <response code="201">Cliente cadastrado</response>
+        </member>
+        <member name="M:Solucao.API.Controllers.ClienteController.Update(Solucao.Domain.Models.Cliente)">
+            <summary>
+            Atualiza o registro de um cliente.
+            </summary>  
+            <response code="200">Cliente atualizado</response>
+        </member>
+        <member name="M:Solucao.API.Controllers.ClienteController.Delete(System.Int32)">
+            <summary>
+            Exclui o registro de um cliente.
+            </summary>  
+            <response code="200">Cliente excluído</response>
         </member>
     </members>
 </doc>

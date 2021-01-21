@@ -24,9 +24,7 @@ namespace Solucao.Services.Services
         {
             c.DataCadastro = DateTime.Now;
             return _repository.Add(c);
-        }
-
-       
+        }       
 
         public void Delete(int id)
         {
@@ -38,23 +36,25 @@ namespace Solucao.Services.Services
             else
             {
                 _repository.Delete(objCliente);
-            }
-
-          
+            }          
         }
 
         public Response<IEnumerable<Cliente>> GetAll()
         {
-            Response<IEnumerable<Cliente>> objResponse = new Response<IEnumerable<Cliente>>();
-           
-           objResponse.Data = _repository.GetAll();
-           
-            return objResponse;
+           Response<IEnumerable<Cliente>> objResponse = new Response<IEnumerable<Cliente>>();           
+           objResponse.Data = _repository.GetAll();           
+           return objResponse;
+        }
+
+        public Page<Cliente> GetPaged(int page, int size, string filterNome, string filterSobrenome, string filterEmail, string sortBy="", string sortOrder="")
+        {
+            Page<Cliente> Pageable = _repository.GetPaged(page, size, filterNome, filterSobrenome, filterEmail, sortBy, sortOrder);
+            return Pageable;
         }
 
         public Cliente GetById(int id)
         {
-            return _repository.GetById(p => p.Id == id); ;
+            return _repository.GetById(p => p.Id == id);
         }
 
         public Cliente Update(Cliente c)

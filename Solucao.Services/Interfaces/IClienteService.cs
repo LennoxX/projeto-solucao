@@ -10,6 +10,8 @@ namespace Solucao.Services.Interfaces
     {
         Response<IEnumerable<Cliente>> GetAll();
 
+        Page<Cliente> GetPaged(int page, int size, string filterNome, string filterSobrenome, string filterEmail, string sortBy = "", string sortOrder = "");
+
         Cliente Create(Cliente c);
 
         Cliente GetById(int id);
